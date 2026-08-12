@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shri Shyam Fast Food And Dhaba | Pratap Nagar, Jaipur</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Mukta:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --charcoal:#1c1410;
+    --charcoal-2:#241a13;
+    --maroon:#8c1c13;
+    --maroon-dark:#6b1310;
+    --marigold:#f2a93b;
+    --turmeric:#d98527;
+    --cream:#f3e6c8;
+    --cream-2:#ece0c1;
+    --chutney:#4c7a3d;
+    --ink:#2a1c12;
+    --shadow: 0 10px 30px rgba(0,0,0,.35);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--charcoal);
+    color:var(--cream);
+    font-family:'Mukta',sans-serif;
+    line-height:1.5;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.display{
+    font-family:'Baloo 2',cursive;
+    font-weight:800;
+  }
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 24px;}
+
+  /* focus visibility */
+  a:focus-visible, button:focus-visible{
+    outline:3px solid var(--marigold);
+    outline-offset:3px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important; transition:none !important;}
+  }
+
+  /* ---------- BUNTING ---------- */
+  .bunting{
+    display:flex;
+    justify-content:center;
+    padding-top:14px;
+    background:var(--charcoal);
+    overflow:hidden;
+  }
+  .bunting-row{
+    display:flex;
+    gap:2px;
+  }
+  .flag{
+    width:26px; height:34px;
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    animation: sway 3.2s ease-in-out infinite;
+    transform-origin: top center;
+  }
+  .flag:nth-child(4n+1){background:var(--maroon); animation-delay:0s;}
+  .flag:nth-child(4n+2){background:var(--marigold); animation-delay:.2s;}
+  .flag:nth-child(4n+3){background:var(--chutney); animation-delay:.4s;}
+  .flag:nth-child(4n+4){background:var(--turmeric); animation-delay:.6s;}
+  @keyframes sway{
+    0%,100%{transform:rotate(-3deg);}
+    50%{transform:rotate(3deg);}
+  }
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(28,20,16,.92);
+    backdrop-filter:blur(6px);
+    border-bottom:2px solid var(--maroon);
+  }
+  nav .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 24px;
+  }
+  .brand{
+    font-family:'Baloo 2',cursive;
+    font-weight:800;
+    font-size:1.25rem;
+    color:var(--marigold);
+    letter-spacing:.3px;
+  }
+  .brand span{color:var(--cream);}
+  .nav-links{display:flex; gap:22px; font-weight:600; font-size:.95rem;}
+  .nav-links a{opacity:.85; transition:opacity .2s, color .2s;}
+  .nav-links a:hover{opacity:1; color:var(--marigold);}
+  .call-btn{
+    background:var(--maroon);
+    color:var(--cream);
+    padding:9px 18px;
+    border-radius:6px;
+    font-weight:700;
+    font-size:.9rem;
+    border:2px solid var(--turmeric);
+    box-shadow:var(--shadow);
+    white-space:nowrap;
+  }
+  .call-btn:hover{background:var(--maroon-dark);}
+  @media (max-width:720px){ .nav-links{display:none;} }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    padding:64px 24px 80px;
+    text-align:center;
+    background:
+      radial-gradient(circle at 20% 20%, rgba(140,28,19,.35), transparent 45%),
+      radial-gradient(circle at 80% 70%, rgba(242,169,59,.18), transparent 40%),
+      var(--charcoal);
+    border-bottom:6px solid var(--maroon);
+  }
+  .eyebrow{
+    display:inline-block;
+    font-weight:700;
+    font-size:.85rem;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    color:var(--turmeric);
+    background:rgba(217,133,39,.12);
+    border:1px solid var(--turmeric);
+    padding:6px 14px;
+    border-radius:999px;
+    margin-bottom:22px;
+  }
+  .hero h1{
+    font-size:clamp(2.4rem, 6vw, 4.2rem);
+    color:var(--marigold);
+    text-shadow: 3px 3px 0 var(--maroon-dark);
+    line-height:1.05;
+    margin-bottom:14px;
+  }
+  .hero .sub{
+    font-size:1.15rem;
+    color:var(--cream-2);
+    max-width:560px;
+    margin:0 auto 30px;
+  }
+  .hero .sub strong{color:var(--marigold);}
+  .hero-cta{
+    display:flex; gap:14px; justify-content:center; flex-wrap:wrap;
+    margin-bottom:38px;
+  }
+  .btn{
+    padding:14px 26px;
+    border-radius:8px;
+    font-weight:700;
+    font-size:1rem;
+    box-shadow:var(--shadow);
+    border:2px solid transparent;
+    transition:transform .15s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--marigold); color:var(--ink); border-color:var(--turmeric);}
+  .btn-secondary{background:transparent; color:var(--cream); border-color:var(--cream);}
+
+  .stat-strip{
+    display:flex; justify-content:center; gap:0;
+    flex-wrap:wrap;
+    max-width:640px;
+    margin:0 auto;
+    background:var(--charcoal-2);
+    border:2px solid var(--maroon);
+    border-radius:12px;
+    overflow:hidden;
+  }
+  .stat{
+    flex:1; min-width:150px;
+    padding:16px 12px;
+    text-align:center;
+    border-right:1px solid rgba(242,169,59,.25);
+  }
+  .stat:last-child{border-right:none;}
+  .stat .num{
+    font-family:'Baloo 2',cursive;
+    font-size:1.5rem;
+    color:var(--marigold);
+    display:block;
+  }
+  .stat .label{font-size:.78rem; color:var(--cream-2); text-transform:uppercase; letter-spacing:.5px;}
+
+  /* ---------- SECTION SHARED ---------- */
+  section{padding:70px 24px;}
+  .section-head{text-align:center; max-width:600px; margin:0 auto 44px;}
+  .section-head .eyebrow{margin-bottom:12px;}
+  .section-head h2{font-size:clamp(1.8rem,4vw,2.6rem); color:var(--marigold);}
+  .section-head p{color:var(--cream-2); margin-top:10px;}
+
+  /* ---------- ABOUT / INFO ---------- */
+  .about{background:var(--cream); color:var(--ink);}
+  .about .section-head h2{color:var(--maroon);}
+  .about .section-head p{color:#5a4632;}
+  .info-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:22px;
+    max-width:900px;
+    margin:0 auto;
+  }
+  .info-card{
+    background:#fff;
+    border:2px solid var(--maroon);
+    border-radius:10px;
+    padding:24px;
+    box-shadow: 4px 4px 0 var(--turmeric);
+  }
+  .info-card h3{color:var(--maroon); font-size:1.1rem; margin-bottom:8px;}
+  .info-card p{font-size:.95rem; color:#4a3a28;}
+
+  /* ---------- MENU ---------- */
+  .menu{background:var(--charcoal);}
+  .menu-board{
+    max-width:900px; margin:0 auto;
+    background:var(--charcoal-2);
+    border:3px solid var(--turmeric);
+    border-radius:14px;
+    padding:10px;
+  }
+  .menu-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:2px;
+  }
+  .menu-item{
+    padding:22px;
+    border-radius:8px;
+  }
+  .menu-item:nth-child(odd){background:rgba(140,28,19,.18);}
+  .menu-item:nth-child(even){background:rgba(76,122,61,.14);}
+  .menu-item h3{
+    font-family:'Baloo 2',cursive;
+    color:var(--marigold);
+    font-size:1.15rem;
+    margin-bottom:6px;
+    display:flex; justify-content:space-between; align-items:baseline; gap:10px;
+  }
+  .menu-item .tag{
+    font-size:.65rem;
+    font-weight:700;
+    background:var(--chutney);
+    color:var(--cream);
+    padding:2px 8px;
+    border-radius:999px;
+    text-transform:uppercase;
+    letter-spacing:.4px;
+  }
+  .menu-item p{font-size:.9rem; color:var(--cream-2);}
+
+  .special-badge{
+    max-width:900px; margin:26px auto 0;
+    background:var(--maroon);
+    border:2px dashed var(--marigold);
+    border-radius:10px;
+    padding:16px 22px;
+    text-align:center;
+    font-weight:700;
+    color:var(--cream);
+  }
+  .special-badge span{color:var(--marigold);}
+  /* ---------- REVIEWS ---------- */
+  .reviews{background:var(--cream); color:var(--ink);}
+  .reviews .section-head h2{color:var(--maroon);}
+  .reviews .section-head p{color:#5a4632;}
+  .review-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:20px;
+    max-width:960px;
+    margin:0 auto;
+  }
+  .review-card{
+    background:#fff;
+    border-radius:10px;
+    padding:22px;
+    border-top:5px solid var(--marigold);
+    box-shadow:0 6px 18px rgba(0,0,0,.1);
+  }
+  .review-card .stars{color:var(--turmeric); font-size:1rem; margin-bottom:10px;}
+  .review-card p{font-size:.92rem; color:#3f3225; margin-bottom:12px;}
+  .review-card .who{font-size:.8rem; font-weight:700; color:var(--maroon);}
+
+  /* ---------- LOCATION ---------- */
+  .location{background:var(--charcoal-2);}
+  .loc-box{
+    max-width:800px; margin:0 auto;
+    text-align:center;
+    background:var(--charcoal);
+    border:2px solid var(--maroon);
+    border-radius:14px;
+    padding:40px 28px;
+  }
+  .loc-box h3{color:var(--marigold); font-size:1.4rem; margin-bottom:10px;}
+  .loc-box p{color:var(--cream-2); margin-bottom:22px;}
+  .loc-actions{display:flex; gap:14px; justify-content:center; flex-wrap:wrap;}
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:var(--charcoal);
+    border-top:4px solid var(--maroon);
+    padding:40px 24px 26px;
+    text-align:center;
+  }
+  footer .brand{display:block; margin-bottom:10px; font-size:1.3rem;}
+  footer p{color:var(--cream-2); font-size:.85rem; margin-bottom:4px;}
+  footer .fine{color:#7a6b57; font-size:.75rem; margin-top:18px;}
+</style>
+</head>
+<body>
+
+<div class="bunting"><div class="bunting-row" id="buntingRow"></div></div>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">Shri Shyam <span>Fast Food &amp; Dhaba</span></div>
+    <div class="nav-links">
+      <a href="#menu">Menu</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#location">Location</a>
+    </div>
+    <a class="call-btn" href="tel:+919928492233">📞 Call Now</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Pratap Nagar · Jaipur</span>
+    <h1>Garma-Garam Khana,<br>Chauबीस Ghante</h1>
+    <p class="sub">Ghar jaisa swaad, dhaba wali mehmaan-nawazi. <strong>Thali se lekar chatpata fast food tak</strong> — sab kuch ek hi jagah, din ho ya raat.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="tel:+919928492233">📞 Order / Call: 99284 92233</a>
+      <a class="btn btn-secondary" href="https://www.google.com/maps/place/Shri+Shyam+Fast+Food+And+Dhaba,+80%2F15,+near+Saint+Soldier+School,+Pratap+Nagar,+Sector+8,+Sector+6,+Pratap+Nagar,+Jaipur,+Rajasthan+302033/data=!4m2!3m1!1s0x396dc9f25096a213:0x72c7c8eda5b0fc8e!18m1!1e1" target="_blank" rel="noopener">📍 Get Directions</a>
+    </div>
+    <div class="stat-strip">
+      <div class="stat"><span class="num">3.9★</span><span class="label">519 Reviews</span></div>
+      <div class="stat"><span class="num">24×7</span><span class="label">Khula Rehta Hai</span></div>
+      <div class="stat"><span class="num">₹ Budget</span><span class="label">Pocket Friendly</span></div>
+    </div>
+  </div>
+</header>
+
+<section class="about">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Hamare Baare Mein</span>
+      <h2>Ek Chhat, Do Zaayke</h2>
+      <p>Dhaba ka desi swaad aur fast food ki speed — dono ek hi jagah milte hain.</p>
+    </div>
+    <div class="info-grid">
+      <div class="info-card">
+        <h3>📍 Address</h3>
+        <p>80/15, near Saint Soldier School, Pratap Nagar, Sector 8, Jaipur, Rajasthan 302033</p>
+      </div>
+      <div class="info-card">
+        <h3>🕐 Timing</h3>
+        <p>Open 24 hours — Monday se Sunday, har din, har waqt.</p>
+      </div>
+      <div class="info-card">
+        <h3>📞 Contact</h3>
+        <p>+91 99284 92233<br>Table booking aur bade order pehle se call karke confirm kar lein.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="menu" id="menu">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Aaj Ka Menu</span>
+      <h2>Dhaba Thali se Chinese Fast Food Tak</h2>
+      <p>Ek jhalak hamari sabse pasandida dishes ki.</p>
+    </div>
+    <div class="menu-board">
+      <div class="menu-grid">
+        <div class="menu-item">
+          <h3>Dhaba Special Thali <span class="tag">Bestseller</span></h3>
+          <p>Dal, sabzi, roti, chawal, salad aur papad — bharpet ghar jaisa khana.</p>
+        </div>
+        <div class="menu-item">
+          <h3>Paneer Butter Masala</h3>
+          <p>Malaidar gravy mein doobe paneer ke tukde, tandoori roti ke saath perfect.</p>
+        </div>
+        <div class="menu-item">
+          <h3>Veg Chowmein</h3>
+          <p>Sadak-chhap fast food ka tadka — tez aanch pe bana chatpata chowmein.</p>
+        </div>
+        <div class="menu-item">
+          <h3>Chilli Paneer</h3>
+          <p>Crispy paneer, tikhi Indo-Chinese chutney mein tossed.</p>
+        </div>
+        <div class="menu-item">
+          <h3>Dal Makhani</h3>
+          <p>Dheemi aanch pe raat bhar pakayi gayi makhani dal, makhan ke tadke ke saath.</p>
+        </div>
+        <div class="menu-item">
+          <h3>Masala Dosa</h3>
+          <p>Crispy dosa, aloo masala bharwan, sambhar-chutney ke saath.</p>
+        </div>
+      </div>
+    </div>
+    <div class="special-badge">Aaj Ka Special: <span>Dhaba Thali + Lassi Combo</span> — raat 12 baje ke baad bhi available.</div>
+  </div>
+</section>
+
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Grahakon Ki Zubaani</span>
+      <h2>Log Kya Kehte Hain</h2>
+      <p>3.9★ rating, 519 se zyada Google reviews ke saath.</p>
+    </div>
+    <div class="review-grid">
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>Lunch aur dinner dono ke liye badhiya jagah — swaadisht khana, saaf-safai ka poora khayal, aur staff bhi friendly hai.</p>
+        <div class="who">— Roz ka customer</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>Kam daam mein lazzatdaar khana aur fatafat service — yahi is dhaba ki sabse badi khoobi hai.</p>
+        <div class="who">— Google Review</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★☆</div>
+        <p>Achhi quality ka khana, service bhi quick milti hai aur rate bhi reasonable rehta hai — zaroor try karein.</p>
+        <div class="who">— Google Review</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="location" id="location">
+  <div class="wrap">
+    <div class="loc-box">
+      <h3>Hamein Dhundhna Aasaan Hai</h3>
+      <p>80/15, near Saint Soldier School, Pratap Nagar, Sector 8, Sector 6, Pratap Nagar, Jaipur, Rajasthan 302033</p>
+      <div class="loc-actions">
+        <a class="btn btn-primary" href="https://www.google.com/maps/place/Shri+Shyam+Fast+Food+And+Dhaba,+80%2F15,+near+Saint+Soldier+School,+Pratap+Nagar,+Sector+8,+Sector+6,+Pratap+Nagar,+Jaipur,+Rajasthan+302033/data=!4m2!3m1!1s0x396dc9f25096a213:0x72c7c8eda5b0fc8e!18m1!1e1" target="_blank" rel="noopener">📍 Google Maps Par Dekhein</a>
+        <a class="btn btn-secondary" href="tel:+919928492233">📞 Abhi Call Karein</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="brand">🪔 Shri Shyam Fast Food &amp; Dhaba</span>
+  <p>80/15, Pratap Nagar, Sector 8, Jaipur, Rajasthan 302033</p>
+  <p>+91 99284 92233 · Open 24 Hours</p>
+  <p class="fine">Made with ❤️ for our regulars. Dishes shown are indicative — kripya latest rates ke liye counter se poochhein.</p>
+</footer>
+
+<script>
+  // build bunting flags responsively
+  const row = document.getElementById('buntingRow');
+  const count = Math.min(40, Math.floor(window.innerWidth / 28));
+  for(let i=0;i<count;i++){
+    const f = document.createElement('div');
+    f.className='flag';
+    row.appendChild(f);
+  }
+</script>
+
+</body>
+</html>
